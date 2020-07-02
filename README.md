@@ -1,2 +1,11 @@
-# Movie-Recommendation-System
-A movie database system in PostgreSQL to recommend  movies to a user based on the similarities with other user’s preference list and the subscription plans.  
+1) POSTGRESQL Account - dp3060
+2) URL of WEB Application - 35.237.79.124:8111
+3) Functionality implemented in web application proposed in proposal - 
+   a) Given an actor,director,genre,language,award,streaming service filter out the result of movies/tvseries with given attributes. Show all movies/tvseries if no filter is given.
+   b) Given a name of title, show all details corrosponding to that title in the database.
+   c) A functionality to like/dislike movies/tvseries and select a set of streaming services that a user is enrolled in.
+   d) Based on the above choices, A collaborative filtering based recommender system for recommending new movies/series to the user, also filtered based on their      subscription plans.
+   Functionality not implemented which was proposed in proposal - None
+4) Interesting webpages - 
+    a) Given an actor,director,genre,language,award,streaming service filter out the result of movies/tvseries with given attributes. Show all movies/tvseries if no filter is given - This webpage gives the user an option to select a bunch of these filters from dropdowns(which are prepopulated based on the current state of the database), based on these filters queries are generated automatically(These queries make use a combination of unions, intersections, like operators and joins on upto 3 tables for each field selected) and the results retreived are shown to the user.
+    b) A collaborative filtering based recommender system for recommending new movies/series to the user, also filtered based on their subscription plans - This page gives the user an option to like or dislike certain movies, select certain streaming services he/she is a premium member of. Based on these choices and the data already present in the database, a list of users similar to the active user are selected (by fetching it from the active database) and with a collaborative filtering logic, a list of titles which might be interesting to the active user are generated. These results are then further filtered based on the subscrition plans a user is part of, or a title is added anyway if it is available for free on any streaming service. (This involves complex join operatons on upto 3 tables, some intersections and unions on query level to show a compiled recommendation list to the user.)
