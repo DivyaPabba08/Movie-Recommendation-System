@@ -1,0 +1,73 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  input[type=submit] {
+  background-color: #000000;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ input[type=checkbox] {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+p{
+font-family:sans-serif;
+font-size:15px;
+}
+  </style>
+
+
+<body>
+  <form method="POST" action="/getresults">
+  <h4>Select the appropriate check boxes to choose the Streaming Services:</h4>
+	 <div>
+  		 <div>
+    	{% for n in streaming_service_list %}
+    	{% if n.name!='None' %}
+    	<div>{{n.name}}
+    	<input type="checkbox" id="id_{{n.streaming_services_id}}" value="{{n.streaming_services_id}}" name="Streamlist" />
+    	{% endif %}
+    	{% endfor %}
+    	</div>
+  		</div>
+  </div>
+
+
+
+  <h4>Watchable Movie and TV Series List:</h4>
+  <div>
+  		 <div>
+    	{% for n in movie_list %}
+    	<div>{{n.name}}</div>
+    	<p>
+    	<input type="checkbox" id="id_{{n.watchable_list_id}}" value="{{n.watchable_list_id}}" name="Like" />Like
+    	<input type="checkbox" id="id_{{n.watchable_list_id}}" value="{{n.watchable_list_id}}" name="Dislike" />Dislike
+    	</p>
+    	{% endfor %}
+  		</div>
+  </div>
+<input type="submit" value="Submit"></p>
+</form>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+

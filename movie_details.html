@@ -1,0 +1,41 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+
+<div>
+    <h4>Movie Details:</h4>
+    <div><b>Movie Name:</b>{{details.movie_name}}</div>
+    <div><b>Country of Origin:</b>{{details.country_of_origin}}</div>
+    <div><b>Actor Name:</b>
+    {% for n in actor_details %}
+    {{n}}
+    {% endfor %}
+  </div>
+  <div>
+    <b>Director Name:</b>{% for n in director_details %}{{n}} &nbsp;&nbsp; {% endfor %}
+    </div>
+    <div>
+    <b>Awards won:</b>{% for n in award_details %}{{n}} &nbsp;&nbsp; {% endfor %}
+    </div>
+    <div>
+    <b>Genre:</b>{% for n in genre_details %}{{n}} &nbsp;&nbsp; {% endfor %}
+    </div>
+    <div>    
+    <b>Languages available in:</b>{% for n in language_details %}{{n}} &nbsp;&nbsp; {% endfor %}
+    </div>
+    <div>
+    <b>Streaming Services:</b>{% for n in streaming_service_details %}{{n}} &nbsp;&nbsp; {% endfor %}
+  </div>
+</div>
+
+</body>
+
+
+</html>

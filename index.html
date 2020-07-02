@@ -1,0 +1,116 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  input[type=submit] {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  position:right
+}
+.dropdown {
+ display: block;
+  border: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+ padding: 12px 16px;
+
+}
+
+ select { 
+                appearance: none; 
+                outline: 0; 
+                background: white; 
+                background-image: none; 
+                color: black; 
+                cursor: pointer; 
+                border:1px solid black; 
+                border-radius:3px; 
+            } 
+            .select { 
+                position: relative; 
+                display: block; 
+                width: 15em; 
+                height: 2em; 
+                line-height: 3; 
+                overflow: hidden; 
+                border-radius: .25em; 
+                padding-bottom:10px; 
+                  
+            } 
+
+
+  </style>
+
+
+<body>
+  <h1>Movie Database System</h1>
+
+<p><a href="recommended_movies">Go to Recommendations Page</a></p>
+<p><a href="more_details">Get Movie/TV Series Details</a></p>
+
+<form method="POST" action="/retrieve">
+<div class="dropdown">
+ 
+<p>
+	Actor:  <select name="actor">
+    {% for x in actor_list %}
+    <option value="{{x}}">{{x}}</option>
+    {% endfor %}
+</select>
+ </p>
+ <p >
+	Director:  <select name="director" >
+    {% for x in director_list %}
+    <option value="{{x}}" >{{x}}</option>
+    {% endfor %}
+</select>
+</p>
+<p>
+	Genre:  <select name="genre">
+    {% for x in genre_list %}
+    <option value="{{x}}" >{{x}}</option>
+    {% endfor %}
+</select>
+</p>
+<p>
+	Language:  <select name="language">
+    {% for x in language_list %}
+    <option value="{{x}}" name="">{{x}}</option>
+    {% endfor %}
+</select>
+</p>
+<p>
+	Award:  <select name="award">
+    {% for x in award_list %}
+    <option value="{{x}}" >{{x}}</option>
+    {% endfor %}
+</select>
+</p>
+<p>
+	Streaming Service:  <select name="streaming service">
+    {% for x in streaming_service_list %}
+    <option value="{{x}}" >{{x}}</option>
+    {% endfor %}
+</select>
+</p>
+
+<input type="submit" value="Retrieve" >
+</form>
+
+
+
+
+
+</body>
+
+
+</html>
